@@ -14,7 +14,6 @@ function ArticlesList() {
             console.log(err)
         })
     }, []);
-    console.log(articles, "is it here?")
     
 return (
     <main className="articles-container">
