@@ -16,8 +16,8 @@ function ArticlesList() {
     }, []);
     
 return (
-    <main className="articles-container">
-        <div className="articles-list">
+    <section className="articles-container">
+        <article className="articles-list">
             {articles.map((singleArticle) => {
                 return (
                     <SingleArticle
@@ -26,8 +26,8 @@ return (
                     />
                 )
             })}
-        </div>
-    </main>
+        </article>
+    </section>
 )
 
 }

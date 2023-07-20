@@ -1,18 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+
 
 function SingleArticle({singleArticle}) {
     return (
         <section className="single-article">
             <img src={singleArticle.article_img_url} alt={singleArticle.title} />
-            <section className="single-article-info">
-                <p><strong>Article name: </strong><i>{singleArticle.title}</i></p>
-                <p><strong>Topic: </strong><i>{singleArticle.topic}</i></p>
+            <article className="single-article-info">
+                <p><strong>  Article name:  </strong><i>{singleArticle.title}</i></p>
+                <p><strong>  Topic:  </strong><i>{singleArticle.topic}</i></p>
                 <section className="anchor-btn-container">
-                    <button className="anchor-button">
-                        This will eventually be the anchor link!
-                    </button>
+                    <Link to={{
+                        pathname: `/articles/${singleArticle.article_id}`,
+                        }}>
+                        <button className="anchor-button">
+                        Read this article...
+                    </button></Link>
                 </section>
-            </section>
+            </article>
         </section>
     );
 }
