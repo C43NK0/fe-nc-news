@@ -8,3 +8,9 @@ export const getAllArticles = () => {
         return response.data.articles
     })
 }
+
+export const viewArticleById = (id) => {
+    return ncNewsBaseUrl.get(`/api/articles/${id}`).then((response) => {
+        return response.data
+    })
+}

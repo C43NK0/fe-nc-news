@@ -89,6 +89,7 @@ h1 {
 }
 
 .login-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     font-size: larger;
     
@@ -97,4 +98,51 @@ h1 {
 .user-text {
     font-size:xx-large;
     text-decoration: underline;
+}
+
+.topic-selector-form {
+    font-size:20px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.topic-selector-button {
+    /* height: 36px; */
+    text-decoration: underline;
+    border: 1px solid #0000003d;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.topic-selector-button:hover {
+    background-color: #bebec4ba;
+    color: rgb(17, 41, 148);
+}
+
+.full-article {
+    
+    display: flex;
+    border: 1px solid #0000003d;
+    margin: 100px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+
+.full-article img {
+    border: 2px solid #0000003d;
+    margin: 1%;
+    display: flexbox;
+    width:fit-content;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.full-article-info {
+    display: flexbox;
+    margin: 10px 0 50px 0;
+}
+
+.full-article-text {
+    font-size: large;
 }
