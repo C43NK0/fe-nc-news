@@ -7,15 +7,20 @@ function ArticleId() {
 
 const articleId = useParams()
     const [articleById, setArticleById] = useState({});
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         viewArticleById(articleId.id)
         .then((res) => {
             setArticleById(res.article)
+            setIsLoading(false)
+            console.log(isLoading)
         })
         .catch((err) => {
             console.log(err)
         })
     }, [])
+
+    if (isLoading) return <p>Loading, please wait...</p>
     
     return (
         <section className="full-article">

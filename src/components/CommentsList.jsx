@@ -7,16 +7,19 @@ function CommentsList() {
 
     const articleId = useParams()
     const [commentsById, setCommentsById] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         viewCommentsByArticleId(articleId.id)
         .then((response) => {            
-            setCommentsById(response.comments)           
+            setCommentsById(response.comments)
+            setIsLoading(false)         
         })
         .catch((err) => {
             console.log(err)
         })
     }, [])
 
+    if (isLoading) return <p>Loading... please wait</p>
     
 
     return (

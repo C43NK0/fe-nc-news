@@ -15,13 +15,7 @@ function SingleArticle({singleArticle}) {
                         pathname: `/articles/${singleArticle.article_id}`,
                         }}>
                         <button className="anchor-button">
-                        View without comments...
-                    </button></Link>
-                    <Link to={{
-                        pathname: `/articles/${singleArticle.article_id}/comments`,
-                        }}>
-                        <button className="anchor-button">
-                        View with comments
+                        View article...
                     </button></Link>
                 </section>
             </article>
