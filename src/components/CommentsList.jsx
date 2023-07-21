@@ -28,10 +28,10 @@ function CommentsList() {
             <section className="comments-list">
                 {commentsById.map(({ comment_id, body, votes, author}) => {
                     return (
-                        <ul className="unordered-comments-list">
+                        <ul key={comment_id} className="unordered-comments-list">
                         <li key={comment_id}>
-                        <li className="comment-text"> <em>{body}</em> </li>
-                        <li> <i><b>user: </b> {author}</i> <b>likes: </b>{votes} </li>  
+                        <p key={comment_id}className="comment-text"> <em>{body}</em> </p>
+                        <p key={{comment_id}}> <i><b>user: </b> {author}</i> <b>likes: </b>{votes} </p>  
                         </li>
                         </ul>
                     )

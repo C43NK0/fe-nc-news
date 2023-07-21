@@ -13,7 +13,6 @@ const articleId = useParams()
         .then((res) => {
             setArticleById(res.article)
             setIsLoading(false)
-            console.log(isLoading)
         })
         .catch((err) => {
             console.log(err)
