@@ -6,21 +6,17 @@ import { useParams } from "react-router-dom";
 function ArticleId() {
 
 const articleId = useParams()
-    const [articleById, setArticleById] = useState({
-
-    });
+    const [articleById, setArticleById] = useState({});
     useEffect(() => {
         viewArticleById(articleId.id)
         .then((res) => {
             setArticleById(res.article)
-            console.log(res, "the res from VABD")
         })
         .catch((err) => {
             console.log(err)
         })
     }, [])
     
-    console.log(articleById.topic, "HERE?")
     return (
         <section className="full-article">
             <img src={articleById.article_img_url} alt={articleById.title} />

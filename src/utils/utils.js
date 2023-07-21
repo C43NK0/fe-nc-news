@@ -14,3 +14,9 @@ export const viewArticleById = (id) => {
         return response.data
     })
 }
+
+export const viewCommentsByArticleId = (id) => {
+    return ncNewsBaseUrl.get(`/api/articles/${id}/comments`).then((response) => {
+        return response.data
+    })
+}
