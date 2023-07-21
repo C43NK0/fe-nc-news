@@ -15,7 +15,7 @@ function SingleArticle({singleArticle}) {
                         pathname: `/articles/${singleArticle.article_id}`,
                         }}>
                         <button className="anchor-button">
-                        Read this article...
+                        View article...
                     </button></Link>
                 </section>
             </article>

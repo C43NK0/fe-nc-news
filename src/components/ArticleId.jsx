@@ -6,21 +6,21 @@ import { useParams } from "react-router-dom";
 function ArticleId() {
 
 const articleId = useParams()
-    const [articleById, setArticleById] = useState({
-
-    });
+    const [articleById, setArticleById] = useState({});
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         viewArticleById(articleId.id)
         .then((res) => {
             setArticleById(res.article)
-            console.log(res, "the res from VABD")
+            setIsLoading(false)
         })
         .catch((err) => {
             console.log(err)
         })
     }, [])
+
+    if (isLoading) return <p>Loading, please wait...</p>
     
-    console.log(articleById.topic, "HERE?")
     return (
         <section className="full-article">
             <img src={articleById.article_img_url} alt={articleById.title} />
