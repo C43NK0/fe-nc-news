@@ -20,3 +20,16 @@ export const viewCommentsByArticleId = (id) => {
         return response.data
     })
 }
+
+export const postComment = (id, newComment) => {
+
+    const postRequestBody = {
+        username: "",
+        body: ""
+    }
+    return ncNewsBaseUrl.post(`/api/articles/${id}/comments`, postRequestBody).then((response) => {
+        console.log(response.data, "res.data in utils!")
+        return response.data
+    })
+
+}

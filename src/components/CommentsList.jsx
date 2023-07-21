@@ -8,6 +8,8 @@ function CommentsList() {
     const articleId = useParams()
     const [commentsById, setCommentsById] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
+    const [userVotes, setUserVotes] = useState(0)
+
     useEffect(() => {
         viewCommentsByArticleId(articleId.id)
         .then((response) => {            
@@ -21,6 +23,11 @@ function CommentsList() {
 
     if (isLoading) return <p>Loading... please wait</p>
     
+    const handleClick = () => {
+        setUserVotes((userVotes) => {
+            return userVotes + 1
+        });
+    }
 
     return (
         <section className="comments-container">
@@ -31,7 +38,10 @@ function CommentsList() {
                         <ul key={comment_id} className="unordered-comments-list">
                         <li key={comment_id}>
                         <p key={comment_id}className="comment-text"> <em>{body}</em> </p>
-                        <p key={{comment_id}}> <i><b>user: </b> {author}</i> <b>likes: </b>{votes} </p>  
+                        <p key={{comment_id}}> <i><b>user: </b> {author}</i> <b>likes: </b>{votes + userVotes} </p>
+                        <button aria-label="like this comment"
+                        onClick={handleClick}
+                        disabled={userVotes > 0}> &#128077; </button>  
                         </li>
                         </ul>
                     )
